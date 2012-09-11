@@ -1,0 +1,3 @@
+[submodule "libs/specificity"]
+	path = libs/specificity
+	url = https://github.com/keeganstreet/specificity.git
