@@ -104,6 +104,7 @@ code {
 		color: #FFF;
 		resize: none;
 		outline: none;
+		overflow: hidden;
 	}
 
 		.input:focus,
@@ -114,6 +115,7 @@ code {
 		}
 
 	.selector {
+		width: 630px;
 		min-height: 36px;
 		padding: 3px 5px;
 		background: #002B36;
@@ -232,4 +234,17 @@ code {
 	position: fixed;
 	top: 110px;
 	left: 20px;
+}
+
+.offscreen-container {
+	height: 1px;
+	width: 1px;
+	position: relative;
+	overflow: hidden;
+}
+
+#offscreen {
+	position: absolute;
+	left: 10000px;
+	top: 10000px;
 }

@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-	var $textarea = $('#selectors'),
-		$items = $('#items'),
+	var $items = $('#items'),
 		$baseItem = $items.find('.item:eq(0)').clone(),
 		$sort = $('.sort'),
+		$offscreen = $('#offscreen'),
 		update,
 		createItem;
 
@@ -20,10 +20,31 @@ $(document).ready(function() {
 
 		update = function(e) {
 			var input = $input.val(),
-				result = SPECIFICITY.calculate(input),
+				result,
 				specificity,
 				highlightedSelector,
 				i, len, part, text1, text2, text3;
+
+			// Resize the textarea to fit contents
+			(function() {
+				var $temp = $('<div class="selector"></div>'),
+					lastChar = input.substr(input.length-1),
+					height;
+
+				if (lastChar === '\n' || lastChar === '\r') {
+					$temp.text(input + ' ');
+					console.log('tes');
+				} else {
+					$temp.text(input);
+				}
+				$offscreen.append($temp);
+				height = $temp.height();
+				$temp.remove();
+				$input.height(height + 'px');
+				$selector.height(height + 'px');
+			}());
+
+			result = SPECIFICITY.calculate(input);
 
 			if (result.length === 0) {
 				$selector.text(' ');
@@ -31,7 +52,6 @@ $(document).ready(function() {
 				$specificityA.text('0');
 				$specificityB.text('0');
 				$specificityC.text('0');
-				$input.height($selector.height());
 				return;
 			}
 
@@ -51,9 +71,6 @@ $(document).ready(function() {
 				highlightedSelector = text1 + '<span class="type-' + part.type + '">' + text2 + '</span>' + text3;
 			}
 			$selector.html(highlightedSelector);
-			if ($selector.height() > 0) {
-				$input.height($selector.height());
-			}
 		};
 
 		$duplicate.click(function(e) {
