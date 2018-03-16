@@ -1,0 +1,105 @@
+@import "~normalize.css";
+
+/*
+* The colour theme for Specificity Calculator is from http://ethanschoonover.com/solarized
+*/
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	background: #FDF6E3;
+	color: #516269;
+	font-family: sans-serif;
+}
+
+h1 {
+	font-size: 40px;
+	line-height: 1.1;
+	margin: 25px 0 5px;
+	color: #CB4B16;
+	letter-spacing: -1px;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	color: #565A9D;
+}
+
+code {
+	background-color: #EEE8D5;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	padding: 0 5px;
+}
+
+.intro {
+	font-style: italic;
+	margin-top: 0;
+}
+
+.footer {
+	margin-bottom: 60px;
+}
+
+.main {
+	max-width: 800px;
+	padding: 0 30px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* Items */
+
+.items {
+	position: relative;
+	min-height: 502px;
+}
+
+.items-move {
+	transition: transform 0.5s;
+}
+
+.scale-enter-active {
+	transition: all 0.2s ease;
+}
+
+.scale-enter {
+	transform: scale(0.6);
+	opacity: 0;
+}
+
+.menu {
+	position: absolute;
+	top: 0;
+	right: 30px;
+}
+
+.button {
+	font-size: 14px;
+	line-height: 1;
+	text-decoration: none;
+	background: #916D00;
+	color: #FFF;
+	border-radius: 3px;
+	padding: 10px;
+
+	&:hover {
+		background: #7F6000;
+	}
+}
+
+.duplicate:before {
+	content: "+";
+	padding-right: 5px;
+}
