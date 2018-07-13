@@ -1,0 +1,35 @@
+{
+  "name": "specificity.keegan.st",
+  "description": "Specificity Calculator Web App",
+  "version": "1.0.0",
+  "author": "Keegan Street",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keeganstreet/specificity.keegan.st.git"
+  },
+  "scripts": {
+    "build": "webpack --mode production --nobranding",
+    "start": "webpack-serve --config webpack.config.js --open --nobranding",
+    "watch": "webpack --mode development --watch --nobranding",
+    "lint": "npm run lint:js && npm run lint:styles",
+    "lint:js": "eslint \"**/*.js\"",
+    "lint:styles": "stylelint \"**/*.scss\""
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "specificity": "^0.3.2",
+    "vue": "^2.5.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "presets": [
+    "@deloitte-digital-au/babel-preset-app"
+  ],
+  "devDependencies": {
+    "@deloitte-digital-au/webpack-config-vuejs": "0.0.7"
+  }
+}
