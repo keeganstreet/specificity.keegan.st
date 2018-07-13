@@ -31,6 +31,13 @@ export default {
 					parts.push(part);
 					previousEnd = part.index + part.length;
 				});
+				// Add whitespace to the end if needed
+				if (previousEnd < this.selector.length) {
+					parts.push({
+						type: 'whitespace',
+						selector: `${this.selector.substr(previousEnd, this.selector.length - previousEnd)} `,
+					});
+				}
 			}
 			return parts;
 		},

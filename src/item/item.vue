@@ -2,7 +2,7 @@
 	<transition name="scale" appear>
 		<div class="item">
 			<div class="input-wrap">
-				<textarea type="text" class="input" v-model="selector" title="Enter a CSS selector"></textarea>
+				<textarea type="text" class="input" v-model="selector" title="Enter a CSS selector" autocomplete="off" autocorrect="off"></textarea>
 				<div class="selector" aria-hidden="true">
 					<span v-for="part in selectorParts" :class="`type-${part.type}`">{{ part.selector }}</span>
 				</div>
