@@ -1,4 +1,4 @@
-import specificity from 'specificity';
+import { calculate } from 'specificity';
 
 export default {
 	props: {
@@ -11,7 +11,7 @@ export default {
 	},
 	computed: {
 		result() {
-			const result = specificity.calculate(this.selector);
+			const result = calculate(this.selector);
 			if (result.length === 1) {
 				return result[0];
 			}

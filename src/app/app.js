@@ -1,4 +1,4 @@
-import specificity from 'specificity';
+import { compare } from 'specificity';
 import item from '../item/item.vue';
 
 const getNextId = (() => {
@@ -36,7 +36,7 @@ export default {
 		},
 		sort() {
 			this.items.sort((a, b) => {
-				return specificity.compare(b.result.specificityArray, a.result.specificityArray);
+				return compare(b.result.specificityArray, a.result.specificityArray);
 			});
 		},
 	},
