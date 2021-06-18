@@ -47,9 +47,17 @@ export default {
 			}
 			return '';
 		},
+		totalSpecificity() {
+			if (this.result?.specificityArray) {
+				// https://web.dev/learn/css/specificity/
+				return this.result.specificityArray[1] * 100 +
+					this.result.specificityArray[2] * 10 +
+					this.result.specificityArray[3] * 1;
+			} else return 0;
+		},
 		specificityArray() {
 			if (this.result) {
-				return this.result.specificityArray;
+				return [...this.result.specificityArray, this.totalSpecificity];
 			}
 			return [0, 0, 0, 0, 0];
 		},

@@ -2,8 +2,10 @@ $type-a-color: #A92B68;
 $type-b-color: #1E6FA8;
 $type-c-color: #22817A;
 
-$list-type-indexes: a b c;
-$list-type-colors: $type-a-color $type-b-color $type-c-color;
+$type-total-color: #228125;
+
+$list-type-indexes: a b c total;
+$list-type-colors: $type-a-color $type-b-color $type-c-color $type-total-color;
 
 .item {
 	background: #FFF;
@@ -109,6 +111,11 @@ $list-type-colors: $type-a-color $type-b-color $type-c-color;
 	.specificity .type-#{$key} dd {
 		background: $color;
 	}
+}
+
+.specificity .type-total {
+	border-top: 1px dotted black;
+	padding-top: 1rem;
 }
 
 .pop-enter-active {

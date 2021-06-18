@@ -26,6 +26,12 @@
 						<dd :key="specificityArray[3]">{{ specificityArray[3] }}</dd>
 					</transition>
 				</span>
+				<span class="type-total">
+					<dt>Total Specificity</dt>
+					<transition name="pop" mode="out-in">
+						<dd :key="specificityArray[4]">{{ specificityArray[4] }}</dd>
+					</transition>
+				</span>
 			</dl>
 			<a href="#" class="duplicate button" v-on:click.prevent="$emit('duplicate', selector)">Duplicate</a>
 		</div>
