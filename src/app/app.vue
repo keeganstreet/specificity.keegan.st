@@ -18,3 +18,7 @@
 </template>
 
 <script src="./app.js"></script>
+
+<style lang="scss">
+@import "./specificity.scss"
+</style>

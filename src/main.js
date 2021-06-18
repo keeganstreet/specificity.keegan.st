@@ -1,7 +1,8 @@
-import Vue from 'vue';
+import Vue from 'vue'
 import app from './app/app.vue';
 
+Vue.config.productionTip = false
+
 new Vue({
-	el: '#app',
-	render: h => h(app),
-});
+  render: h => h(app),
+}).$mount('#app')

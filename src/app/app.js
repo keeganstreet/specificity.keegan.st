@@ -1,5 +1,5 @@
 import { compare } from 'specificity';
-import item from '../item/item.vue';
+import item from '../components/item/item.vue';
 
 const getNextId = (() => {
 	let id = 0;

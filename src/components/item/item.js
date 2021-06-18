@@ -51,12 +51,12 @@ export default {
 			if (this.result) {
 				return this.result.specificityArray;
 			}
-			return [0, 0, 0, 0];
+			return [0, 0, 0, 0, 0];
 		},
 	},
 	watch: {
 		'result.specificity': {
-			handler: function() {
+			handler: function () {
 				this.$emit('change', this.result);
 			},
 			immediate: true,
