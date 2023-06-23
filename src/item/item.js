@@ -1,4 +1,4 @@
-import { calculate } from 'specificity';
+import { calculateWithDetails } from 'specificity';
 
 export default {
 	props: {
@@ -11,31 +11,37 @@ export default {
 	},
 	computed: {
 		result() {
-			const result = calculate(this.selector);
-			if (result.length === 1) {
-				return result[0];
+			let result;
+			try {
+				result = calculateWithDetails(this.selector.replaceAll(/\n/g, " "));
+			} catch (e) {
+				console.error("Error calculating specificity", e);
 			}
+			return result;
 		},
 		selectorParts() {
 			const parts = [];
 			if (this.result) {
-				let previousEnd = 0;
-				this.result.parts.forEach(part => {
+				let previousEnd = 1;
+				this.result.contributingParts.forEach(part => {
 					// Add whitespace parts
-					if (part.index > previousEnd) {
+					if (part.start.column > previousEnd) {
 						parts.push({
 							type: 'whitespace',
-							selector: this.selector.substr(previousEnd, part.index - previousEnd),
+							selector: this.selector.substring(previousEnd - 1, part.start.column - 1),
 						});
 					}
-					parts.push(part);
-					previousEnd = part.index + part.length;
+					parts.push({
+						type: part.level,
+						selector: this.selector.substring(part.start.column - 1, part.end.column - 1)
+					});
+					previousEnd = part.end.column;
 				});
 				// Add whitespace to the end if needed
 				if (previousEnd < this.selector.length) {
 					parts.push({
 						type: 'whitespace',
-						selector: `${this.selector.substr(previousEnd, this.selector.length - previousEnd)} `,
+						selector: `${this.selector.substr(previousEnd - 1, this.selector.length - previousEnd)} `,
 					});
 				}
 			}
@@ -43,15 +49,13 @@ export default {
 		},
 		specificity() {
 			if (this.result) {
-				return this.result.specificity;
+				return this.result.total;
 			}
-			return '';
-		},
-		specificityArray() {
-			if (this.result) {
-				return this.result.specificityArray;
-			}
-			return [0, 0, 0, 0];
+			return {
+				A: "0",
+				B: "0",
+				C: "0"
+			};
 		},
 	},
 	watch: {

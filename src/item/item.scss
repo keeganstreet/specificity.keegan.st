@@ -1,9 +1,9 @@
-$type-a-color: #A92B68;
-$type-b-color: #1E6FA8;
-$type-c-color: #22817A;
+$type-A-color: #A92B68;
+$type-B-color: #1E6FA8;
+$type-C-color: #22817A;
 
-$list-type-indexes: a b c;
-$list-type-colors: $type-a-color $type-b-color $type-c-color;
+$list-type-indexes: A B C;
+$list-type-colors: $type-A-color $type-B-color $type-C-color;
 
 .item {
 	background: #FFF;
