@@ -1,5 +1,3 @@
-@import "~normalize.css";
-
 /*
 * The colour theme for Specificity Calculator is from http://ethanschoonover.com/solarized
 */
@@ -15,7 +13,7 @@ html {
 }
 
 body {
-	background: #FDF6E3;
+	background: #fdf6e3;
 	color: #516269;
 	font-family: sans-serif;
 }
@@ -24,7 +22,7 @@ h1 {
 	font-size: 40px;
 	line-height: 1.1;
 	margin: 25px 0 5px;
-	color: #CB4B16;
+	color: #cb4b16;
 	letter-spacing: -1px;
 }
 
@@ -33,12 +31,12 @@ p {
 }
 
 a {
-	color: #565A9D;
+	color: #565a9d;
 }
 
 code {
-	background-color: #EEE8D5;
-	border: 1px solid #CCCCCC;
+	background-color: #eee8d5;
+	border: 1px solid #cccccc;
 	border-radius: 3px;
 	padding: 0 5px;
 }
@@ -89,13 +87,13 @@ code {
 	font-size: 14px;
 	line-height: 1;
 	text-decoration: none;
-	background: #916D00;
-	color: #FFF;
+	background: #916d00;
+	color: #fff;
 	border-radius: 3px;
 	padding: 10px;
 
 	&:hover {
-		background: #7F6000;
+		background: #7f6000;
 	}
 }
 
