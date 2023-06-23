@@ -1,10 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		<title>Specificity Calculator</title>
-		<link rel="stylesheet" href="dist/main.css" />
-		<link rel="icon" type="image/png" href="favicon.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 
@@ -12,40 +11,50 @@
 		<div class="main">
 			<h1>Specificity Calculator</h1>
 			<p class="intro">
-				A visual way to understand <a href="https://www.w3.org/TR/selectors-3/#specificity" target="_blank">CSS specificity</a>.
-				Change the selectors or paste in your own.
+				A visual way to understand
+				<a href="https://www.w3.org/TR/selectors-4/#specificity" target="_blank"
+					>CSS specificity</a
+				>. Change the selectors or paste in your own.
 			</p>
 			<div id="app"></div>
 			<div class="footer">
 				<p>
-					Specificity Calculator was built by <a href="https://keegan.st">Keegan Street</a>.
-					The <a href="https://github.com/keeganstreet/specificity">specificity calculator JavaScript module</a> is available on GitHub or via <code>npm install specificity</code>.
+					Specificity Calculator was built by
+					<a href="https://keegan.st">Keegan Street</a>. The
+					<a href="https://github.com/keeganstreet/specificity"
+						>specificity calculator JavaScript module</a
+					>
+					is available on GitHub or via <code>npm install specificity</code>.
 				</p>
-				<p>Specificity Calculator is built for <a href="https://www.w3.org/TR/selectors-3/" target="_blank">CSS Selectors Level 3</a>.</p>
 				<p>
-					Specificity Calculator isn’t a CSS validator. If you enter invalid selectors it will return incorrect results.
-					For example, the <a href="https://www.w3.org/TR/selectors-3/#negation" target="_blank">negation pseudo-class</a> may only take a simple selector as an argument.
-					Using a pseudo-element or combinator as an argument for <code>:not()</code> is invalid CSS3 so Specificity Calculator will return incorrect results.
+					Specificity Calculator is built for
+					<a href="https://www.w3.org/TR/selectors-4/" target="_blank"
+						>CSS Selectors Level 4</a
+					>.
 				</p>
-				<p>Specificity Calculator doesn’t support <a href="https://mathiasbynens.be/notes/css-escapes" target="_blank">CSS character escape sequences</a>.</p>
 				<p>
-					Care has been taken to ensure results are accurate.
-					If you find a defect, please <a href="https://github.com/keeganstreet/specificity/issues" target="_blank">report it</a>.
+					Care has been taken to ensure results are accurate. If you find a
+					defect, please
+					<a
+						href="https://github.com/keeganstreet/specificity/issues"
+						target="_blank"
+						>report it</a
+					>.
 				</p>
 			</div>
 		</div>
 
-		<script src="dist/main.bundle.js?v=2"></script>
+		<script type="module" src="/src/main.js"></script>
 		<script>
 			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-2218289-3']);
-			_gaq.push(['_trackPageview']);
-			(function() {
-				var ga = document.createElement('script');
-				ga.type = 'text/javascript';
+			_gaq.push(["_setAccount", "UA-2218289-3"]);
+			_gaq.push(["_trackPageview"]);
+			(function () {
+				var ga = document.createElement("script");
+				ga.type = "text/javascript";
 				ga.async = true;
-				ga.src = 'https://ssl.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0];
+				ga.src = "https://ssl.google-analytics.com/ga.js";
+				var s = document.getElementsByTagName("script")[0];
 				s.parentNode.insertBefore(ga, s);
 			})();
 		</script>

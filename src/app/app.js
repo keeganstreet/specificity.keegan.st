@@ -36,7 +36,7 @@ export default {
 		},
 		sort() {
 			this.items.sort((a, b) => {
-				return compare(b.result.specificityArray, a.result.specificityArray);
+				return compare(b.result.total, a.result.total);
 			});
 		},
 	},

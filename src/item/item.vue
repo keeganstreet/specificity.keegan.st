@@ -8,22 +8,22 @@
 				</div>
 			</div>
 			<dl class="specificity" aria-live="polite">
-				<span class="type-a">
+				<span class="type-A">
 					<dt>IDs</dt>
 					<transition name="pop" mode="out-in">
-						<dd :key="specificityArray[1]">{{ specificityArray[1] }}</dd>
+						<dd :key="specificity.A">{{ specificity.A }}</dd>
 					</transition>
 				</span>
-				<span class="type-b">
+				<span class="type-B">
 					<dt>Classes, attributes and pseudo-classes</dt>
 					<transition name="pop" mode="out-in">
-						<dd :key="specificityArray[2]">{{ specificityArray[2] }}</dd>
+						<dd :key="specificity.B">{{ specificity.B }}</dd>
 					</transition>
 				</span>
-				<span class="type-c">
+				<span class="type-C">
 					<dt>Elements and pseudo-elements</dt>
 					<transition name="pop" mode="out-in">
-						<dd :key="specificityArray[3]">{{ specificityArray[3] }}</dd>
+						<dd :key="specificity.C">{{ specificity.C }}</dd>
 					</transition>
 				</span>
 			</dl>

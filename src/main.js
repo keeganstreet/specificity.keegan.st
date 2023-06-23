@@ -1,7 +1,6 @@
-import Vue from 'vue';
-import app from './app/app.vue';
+import "normalize.css";
+import "./specificity.scss";
+import { createApp } from "vue";
+import App from "./app/app.vue";
 
-new Vue({
-	el: '#app',
-	render: h => h(app),
-});
+createApp(App).mount("#app");
