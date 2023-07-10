@@ -26,7 +26,17 @@ export default {
 	},
 	methods: {
 		change(result, index) {
-			this.items[index].result = result;
+			if (result) {
+				if (result.total) {
+					this.items[index].total = result.total;
+				}
+			} else {
+				this.items[index].total = {
+					A: "0",
+					B: "0",
+					C: "0"
+				}
+			}
 		},
 		duplicate(selector, index) {
 			this.items.splice(index, 0, {
@@ -36,7 +46,7 @@ export default {
 		},
 		sort() {
 			this.items.sort((a, b) => {
-				return compare(b.result.total, a.result.total);
+				return compare(b.total, a.total);
 			});
 		},
 	},
