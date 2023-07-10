@@ -59,7 +59,7 @@ export default {
 		},
 	},
 	watch: {
-		'result.specificity': {
+		'specificity': {
 			handler: function() {
 				this.$emit('change', this.result);
 			},
